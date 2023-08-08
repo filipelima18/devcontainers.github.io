@@ -153,6 +153,14 @@ Some properties may apply differently to Codespaces.
 | `hostRequirements` | object | Codespaces reads this property from devcontainer.json, not image metadata. |
 {: .table .table-bordered .table-responsive}
 
+### <a href="#codesandbox" name="codesandbox" class="anchor"> CodeSandbox </a>
+
+[CodeSandbox](https://codesandbox.io/) provides cloud development environments running on a microVM architecture.
+
+The free tier includes 2 vCPUs and 2 GB RAM per environment and these specs are customizable. Due to memory snapshotting, CodeSandbox resumes and branches an environment in under 2 seconds. 
+
+With CodeSandbox, you can import a GitHub repository to do full app development and conduct code reviews. It also supports creating sandboxes (isolated development instances) to prototype an idea. You can code using the CodeSandbox web editor, VS Code, or the CodeSandbox iOS app.
+
 ### <a href="#devpod" name="devpod" class="anchor"> DevPod </a>
 
 [DevPod](https://github.com/loft-sh/devpod) is a client-only tool to create reproducible developer environments based on a devcontainer.json on any backend. Each developer environment runs in a container and is specified through a devcontainer.json. Through DevPod providers these environments can be created on any backend, such as the local computer, a Kubernetes cluster, any reachable remote machine or in a VM in the cloud.
