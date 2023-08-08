@@ -161,6 +161,15 @@ The free tier includes 2 vCPUs and 2 GB RAM per environment and these specs are 
 
 With CodeSandbox, you can import a GitHub repository to do full app development and conduct code reviews. It also supports creating sandboxes (isolated development instances) to prototype an idea. You can code using the CodeSandbox web editor, VS Code, or the CodeSandbox iOS app.
 
+#### <a href="#codesandbox-specific-properties" name="codesandbox-specific-properties" class="anchor"> Product specific properties </a>
+CodeSandbox has built-in support for any programming language and supports Debian and Ubuntu-based images.
+
+All properties specific to CodeSandbox are placed within a `.codesandbox` folder at root level. Typically, this will contain:
+- `tasks.json`– defines the commands to be run at startup or with a click.
+- `environment.json` – defines the runtime and its version.
+
+More details about these can be found on the CodeSandbox [documentation](https://codesandbox.io/docs/learn/repositories/task).
+
 ### <a href="#devpod" name="devpod" class="anchor"> DevPod </a>
 
 [DevPod](https://github.com/loft-sh/devpod) is a client-only tool to create reproducible developer environments based on a devcontainer.json on any backend. Each developer environment runs in a container and is specified through a devcontainer.json. Through DevPod providers these environments can be created on any backend, such as the local computer, a Kubernetes cluster, any reachable remote machine or in a VM in the cloud.
