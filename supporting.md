@@ -153,6 +153,25 @@ Some properties may apply differently to Codespaces.
 | `hostRequirements` | object | Codespaces reads this property from devcontainer.json, not image metadata. |
 {: .table .table-bordered .table-responsive}
 
+### <a href="#codesandbox" name="codesandbox" class="anchor"> CodeSandbox </a>
+
+[CodeSandbox](https://codesandbox.io/) provides cloud development environments running on a microVM architecture. VM specs start at 2 vCPUs + 2 GB RAM per environment (free tier) and can go up to 16 vCPUs + 32 GB RAM.
+
+When you import a GitHub repository into CodeSandbox, it will automatically provision a dedicated environment for every branch. Thanks to memory snapshotting, CodeSandbox resumes and branches an environment in under 2 seconds. 
+
+CodeSandbox offers support for multiple editors, so you can code using the CodeSandbox web editor, VS Code, or the CodeSandbox iOS app.
+
+**Tip:** After importing a repository into CodeSandbox, you can use the built-in UI to configure the environment using Dev Containers.
+
+#### <a href="#codesandbox-specific-properties" name="codesandbox-specific-properties" class="anchor"> Product specific properties </a>
+CodeSandbox has built-in support for any programming language and supports Debian and Ubuntu-based images.
+
+All properties specific to CodeSandbox are placed within a `.codesandbox` folder at root level. Typically, this will contain:
+- `tasks.json`– defines the commands to be run at startup or with a click.
+- `environment.json` – defines the runtime and its version.
+
+More details about these can be found on the CodeSandbox [documentation](https://codesandbox.io/docs/learn/repositories/task).
+
 ### <a href="#devpod" name="devpod" class="anchor"> DevPod </a>
 
 [DevPod](https://github.com/loft-sh/devpod) is a client-only tool to create reproducible developer environments based on a devcontainer.json on any backend. Each developer environment runs in a container and is specified through a devcontainer.json. Through DevPod providers these environments can be created on any backend, such as the local computer, a Kubernetes cluster, any reachable remote machine or in a VM in the cloud.
