@@ -157,7 +157,7 @@ Some properties may apply differently to Codespaces.
 
 [CodeSandbox](https://codesandbox.io/) provides cloud development environments running on a microVM architecture. VM specs start at 2 vCPUs + 2 GB RAM per environment (free tier) and can go up to 16 vCPUs + 32 GB RAM.
 
-When you import a GitHub repository into CodeSandbox, it will automatically provision a dedicated environment for every branch. Thanks to memory snapshotting, CodeSandbox then resumes and branches an environment in under 2 seconds. 
+When you import a GitHub repository into CodeSandbox, it will automatically provision a dedicated environment for every branch. Thanks to memory snapshotting, CodeSandbox then resumes and branches an environment in under 2 seconds.
 
 CodeSandbox offers support for multiple editors, so you can code using the CodeSandbox web editor, VS Code, or the CodeSandbox iOS app.
 
@@ -166,9 +166,7 @@ CodeSandbox offers support for multiple editors, so you can code using the CodeS
 #### <a href="#codesandbox-specific-properties" name="codesandbox-specific-properties" class="anchor"> Product specific properties </a>
 CodeSandbox has built-in support for any programming language and supports Debian and Ubuntu-based images.
 
-All properties specific to CodeSandbox are placed within a `.codesandbox` folder at root level. Typically, this will contain:
-- `tasks.json`– defines the commands to be run at startup or with a click.
-- `environment.json` – defines the runtime and its version.
+All properties specific to CodeSandbox are placed within a `.codesandbox` folder at root level. Typically, this will contain a `tasks.json` file, which defines the commands to be run at startup or with a click.
 
 More details about these can be found on the CodeSandbox [documentation](https://codesandbox.io/docs/learn/repositories/task).
 
@@ -188,6 +186,7 @@ The following properties apply differently to CodeSandbox:
 | `features` | object | CodeSandbox automatically adds docker-cli to the container and connects to the host socket. Features like `docker-in-docker` and `docker-outside-of-docker` will work a bit differently. As the docker-cli and socket from host is accessible in the container, most uses cases should work as expected. |
 | `${localEnv:VARIABLE_NAME}` | Any | For CodeSandbox, the host is in the cloud rather than in your local machine.|
 | `hostRequirements` | object | CodeSandbox does not yet support this property. |
+{: .table .table-bordered .table-responsive}
 
 ### <a href="#devpod" name="devpod" class="anchor"> DevPod </a>
 
