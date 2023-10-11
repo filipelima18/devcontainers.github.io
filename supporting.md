@@ -168,7 +168,7 @@ CodeSandbox has built-in support for any programming language and supports Debia
 
 All properties specific to CodeSandbox are placed within a `.codesandbox` folder at root level. Typically, this will contain a `tasks.json` file, which defines the commands to be run at startup or with a click.
 
-More details about these can be found on the CodeSandbox [documentation](https://codesandbox.io/docs/learn/repositories/task).
+More details about these can be found in the CodeSandbox [documentation](https://codesandbox.io/docs/learn/repositories/task).
 
 #### Product specific limitations
 
@@ -182,8 +182,8 @@ The following properties apply differently to CodeSandbox:
 | `otherPortsAttributes` | object | CodeSandbox does not yet support this property. |
 | `remoteUser` | string | CodeSandbox currently ignores this property and overrides this as `root`. CodeSandbox uses rootless Podman to run containers. Running with a non-root remote user is the same as running as a root remote user in rootless Podman, from a security perspective. CodeSandbox plans on supporting this in the future. |
 | `shutdownAction` | enum | Does not apply to CodeSandbox. |
-| `capAdd` | array | CodeSandbox does not support adding all capabilites. As the containers are run as a non-root user, capabilities that need root access will not work. |
-| `features` | object | CodeSandbox automatically adds docker-cli to the container and connects to the host socket. Features like `docker-in-docker` and `docker-outside-of-docker` will work a bit differently. As the docker-cli and socket from host is accessible in the container, most uses cases should work as expected. |
+| `capAdd` | array | CodeSandbox does not support adding all capabilities. As the containers are run as a non-root user, capabilities that need root access will not work. |
+| `features` | object | CodeSandbox automatically adds docker-cli to the container and connects to the host socket. Features like `docker-in-docker` and `docker-outside-of-docker` will work a bit differently. As the docker-cli and socket from host are accessible in the container, most use cases should work as expected. |
 | `${localEnv:VARIABLE_NAME}` | Any | For CodeSandbox, the host is in the cloud rather than in your local machine.|
 | `hostRequirements` | object | CodeSandbox does not yet support this property. |
 {: .table .table-bordered .table-responsive}
