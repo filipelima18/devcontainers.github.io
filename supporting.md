@@ -172,6 +172,23 @@ All properties specific to CodeSandbox are placed within a `.codesandbox` folder
 
 More details about these can be found on the CodeSandbox [documentation](https://codesandbox.io/docs/learn/repositories/task).
 
+#### Product specific limitations
+
+CodeSandbox runs Dev Containers using rootless Podman instead of Docker. CodeSandbox also uses [devcontainers/cli](https://github.com/devcontainers/cli) to manage Dev Containers. So any limitations of rootless Podman and devcontainers-cli should apply to CodeSandbox. 
+The following properties apply differently to CodeSandbox:
+
+| Property or variable | Type | Description |
+|----------|---------|----------------------|
+| `forwardPorts` | array | CodeSandbox does not need this property. All ports opened in Dev Containers will be mapped to a public URL automatically. |
+| `portsAttributes` | object | CodeSandbox does not yet support this property. Ports are attached to tasks configured in `.codesandbox/tasks.json` and are attributed to the tasks.|
+| `otherPortsAttributes` | object | CodeSandbox does not yet support this property. |
+| `remoteUser` | string | CodeSandbox currently ignores this property and overrides this as `root`. CodeSandbox uses rootless Podman to run containers. Running with a non-root remote user is the same as running as a root remote user in rootless Podman, from a security perspective. CodeSandbox plans on supporting this in the future. |
+| `shutdownAction` | enum | Does not apply to CodeSandbox. |
+| `capAdd` | array | CodeSandbox does not support adding all capabilites. As the containers are run as a non-root user, capabilities that need root access will not work. |
+| `features` | object | CodeSandbox automatically adds docker-cli to the container and connects to the host socket. Features like `docker-in-docker` and `docker-outside-of-docker` will work a bit differently. As the docker-cli and socket from host is accessible in the container, most uses cases should work as expected. |
+| `${localEnv:VARIABLE_NAME}` | Any | For CodeSandbox, the host is in the cloud rather than in your local machine.|
+| `hostRequirements` | object | CodeSandbox does not yet support this property. |
+
 ### <a href="#devpod" name="devpod" class="anchor"> DevPod </a>
 
 [DevPod](https://github.com/loft-sh/devpod) is a client-only tool to create reproducible developer environments based on a devcontainer.json on any backend. Each developer environment runs in a container and is specified through a devcontainer.json. Through DevPod providers these environments can be created on any backend, such as the local computer, a Kubernetes cluster, any reachable remote machine or in a VM in the cloud.
