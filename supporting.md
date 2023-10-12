@@ -172,8 +172,8 @@ More details about these can be found in the CodeSandbox [documentation](https:/
 
 #### Product specific limitations
 
-CodeSandbox runs Dev Containers using rootless Podman instead of Docker. CodeSandbox also uses [devcontainers/cli](https://github.com/devcontainers/cli) to manage Dev Containers. So any limitations of rootless Podman and devcontainers-cli should apply to CodeSandbox. 
-The following properties apply differently to CodeSandbox:
+CodeSandbox runs Dev Containers using rootless Podman instead of Docker. CodeSandbox also uses [devcontainers/cli](https://github.com/devcontainers/cli) to manage Dev Containers. So any limitations of rootless Podman and Dev Container CLI should apply to CodeSandbox. 
+The following properties apply differently to CodeSandbox.
 
 | Property or variable | Type | Description |
 |----------|---------|----------------------|
